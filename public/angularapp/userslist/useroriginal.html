@@ -1,0 +1,25 @@
+<h1 style="text-align: center;">{{vm.title}}</h1>
+<h2 style="text-align: left;"><p style="font-size: 20px;"> <br>List of existing users: (All new added users also shall appear below)<p></h2>
+<ul>
+	<li ng-repeat="user in vm.users"><a ng-href="#">{{user.Name}}&nbsp;&nbsp;{{user.Status}}</a></li></br>
+</ul>
+<h3 style="position: absolute;top: 40%;left: 1%;"> Add new users!</h3>
+<form name="vm.myform" ng-submit="vm.addReview()" style="position: absolute;left: 1%; top: 50%;">
+ Add user's name :&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Name"  required ng-minlength="6"  ng-model="vm.Name">
+ <div ng-show="vm.myform.Name.$dirty && vm.myform.Name.$invalid && vm.isSubmitted">
+ 	<p>Name should be more than 2 characters long.</p>
+ </div>
+ <br></br><p>Status (active/inactive) :&nbsp;&nbsp;<textarea name="Status" required ng-minlength="8"ng-model="vm.Status" rows="1" cols="10" style="margin-left: 10px; position: absolute; top: 38%;"></textarea></p>
+ <div ng-show="vm.myform.Status.$dirty && vm.isSubmitted">
+ 	<p>Status should be more than 6 characters long.</p>
+ </div>
+<button type="submit" ng-click="vm.addReview()" class="btn btn-primary" style="size: 10%;">Add new user</button>
+</form>
+<h3 style="position: absolute;right:8%; top:12%;font-size: 20px;">FEEDBACK FORM</h3>
+ <h3 style="position: absolute;right:5%; top:15%;font-size: 20px;">Connect with us! drop a message.</h3>
+<form>
+	<input type="text" id="subject" placeholder="Subject of email.." style="position: absolute;right:8%;top: 20%;">
+	<input type="email" id="email" placeholder="Your Email.." style="position: absolute;top:25%;right:8%;">
+	<textarea name="text" id="text" cols="30" rows="6" placeholder="Enter your message here.." style="position: absolute;top:30%;right: 4.5%;"></textarea>
+	<input type="submit" value="Submit" id="buttonid" onclick="queryfunction(), jsfun()" style="position: absolute;top: 53%;right: 4.5%;">
+</form>

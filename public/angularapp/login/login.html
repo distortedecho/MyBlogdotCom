@@ -1,0 +1,31 @@
+<div ng-if="!vm.isLoggedin()" class="logindiv">
+<div ng-if="!vm.isLoggedin()" class="logindivheading">Login!</div>
+<form style="line-height: 2.5rem;" class="loginclass"ng-controller="loginController as vm" ng-init="vm.init()" ng-if="!vm.isLoggedin()">
+<input type="text" placeholder="Username" ng-model="vm.Username" autocapitalize="none">
+<input type="password" placeholder="Password" ng-model="vm.Password" autocapitalize="none">
+<button type="submit" ng-click="vm.login()">login</button>
+</form>
+</div>
+ <div class="nav">
+	<label for="toggle">&#9776;</label>
+	<input type="checkbox" id="toggle"/>
+	<div class="menu">
+	<a ng-if="!vm.isLoggedin()" href="/#/">Home</a>
+	<a ng-if="vm.isLoggedin()" href="/#/">Home</a>
+	<a ng-if="vm.isLoggedin()" href="/#/Feed">Feed</a>
+	<a ng-if="!vm.isLoggedin()" href="/#/Signup"><span>Signup</span></a>
+	<a ng-if="vm.isLoggedin()" ng-click="vm.logout()" style="cursor: pointer;"><span>Logout</span></a>
+</div>
+</div>
+<div class="loginContent" ng-controller="loginController as vm"  ng-if="vm.isLoggedin()" ng-init="vm.init()">
+<div class="headerdiv"></div>
+<div class="headerdivtwo">it's your blog, write it out.</div>
+<div class="detailslogin">How was your day?</div>	
+<!-- blog upload form!-->
+<form name="vm.blogForm" class="Blogform">
+<textarea  name="text" ng-model="vm.text" id="text" rows="10" cols="110" required ng-minlength="3" placeholder= "Share..">{{loggedInUser}}</textarea> 
+</form>
+<div class="btnclass">
+<button ng-click="vm.addBlog()" style="background-color: #1a1b1c;font-family: 'Open Sans Condensed', sans-serif;">Post</button>
+</div>
+<div class="footer">&copy Aditya Rathi</div>

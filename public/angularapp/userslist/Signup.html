@@ -1,0 +1,41 @@
+<div class="signupdiv1"></div>
+<div class="signupdiv2"></div>
+<div ng-hide="vm.message" class="details"><b>Sign up</b></style></div>
+<div ng-hide="vm.message" class="details2">Create your free account now! Fill in the details below.</div>
+<div class="message" ng-if="vm.message" role="alert">
+	<p>{{vm.message}}</p>
+</div>
+<form ng-hide="vm.message" name="vm.myform">
+<input type="text" name="Firstname" placeholder="First Name"  required ng-minlength="3"  ng-model="vm.Firstname">
+ <div class="warning" ng-show="vm.myform.Firstname.$dirty && vm.myform.Firstname.$invalid">
+ 	<p style="font-size: 0.6rem;color: red;">Name should be more than 2 characters long.</p>
+ </div>
+ 
+ <input type="text" name="Lastname" placeholder="Last Name"  required ng-minlength="3"  ng-model="vm.Lastname">
+ <div class="warning2"ng-show="vm.myform.Lastname.$dirty && vm.myform.Lastname.$invalid">
+ 	<p style="font-size: 0.6rem;color: red;">Last Name should be more than 2 characters long.</p>
+ </div>
+ <input type="email" name="Email" placeholder="email"  required ng-minlength="3"  ng-model="vm.Email">
+ <input type="number" name="Age" placeholder="age"  required ng-minlength="2"  ng-model="vm.Age">
+ <div class="warning3" ng-show="vm.myform.Age.$dirty && vm.myform.Age.$invalid">
+ 	<p style="font-size: 0.6rem;color: red;">10 above only!</p>
+ </div>
+ <input type="password" name="Password" placeholder="Password"  required ng-minlength="3"  ng-model="vm.Password">
+ <div class="warning4" ng-show="vm.myform.Password.$dirty && vm.myform.Password.$invalid">
+ 	<p style="font-size: 0.6rem;color: red;">Password should be more than 2 characters long.</p>
+ </div>
+ <input type="text" name="Username" placeholder="Username"  required ng-minlength="3"  ng-model="vm.Username">
+ <div class="warning5" ng-show="vm.myform.Username.$dirty && vm.myform.Username.$invalid">
+ 	<p style="font-size: 0.6rem;color: red;">Username should be more than 2 characters long.</p>
+ </div>
+<button type="submit" ng-click="vm.addReview()" style="size: 10%;">CREATE ACCOUNT</button>
+</form>
+<div class="nav">
+	<label for="toggle">&#9776;</label>
+	<input type="checkbox" id="toggle"/>
+	<div class="menu">
+	<!--<a href="/#/details">Home</a>!-->
+	<a href="/#/">Home</a>
+	<a href="/#/Signup"><span>Login</span></a>
+</div>
+</div>

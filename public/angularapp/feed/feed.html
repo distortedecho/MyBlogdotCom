@@ -1,0 +1,14 @@
+<div class="nav">
+	<label for="toggle">&#9776;</label>
+	<input type="checkbox" id="toggle"/>
+	<div class="menu">
+	<a  href="/#/">Home</a>
+	<a  href="/#/login">Profile</a>
+</div>
+</div>
+<div class="feedhbck"></div>
+<div class="feedheader">Feed</div>
+<ul class="feedul">
+	<li ng-repeat="blog in vm.blogs">{{blog.Username}} posted:  {{blog.text}}</li>
+</ul>
+<div class="footer">&copy Aditya Rathi</div>

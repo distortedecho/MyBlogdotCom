@@ -1,0 +1,21 @@
+<div class="nav">
+	<label for="toggle">&#9776;</label>
+	<input type="checkbox" id="toggle"/>
+	<div class="menu">
+	<a href="/#/details">Home</a>
+	<a href="/#/login">Login</a>
+	<a href="/#/Signup"><span>Sign up</span></a>
+</div>
+</div>
+<img class="display" src="display.jpg" style="width: 100%;height: 88%;"> <!-- style ie height and width in img works with class only -->
+<img class="display" src="display4.jpg" style="width: 100%;height: 88%;">
+<img class="display" src="display5.jpg" style="width: 100%;height: 88%;">
+<div class="overlay"></div>
+<!-- <div class="heading">MyBlog.com</div> -->
+<div class="subheading">Write your story with us.</div>
+<div class="psubheading">Write and share your content with the world. Sign up for free or login with your existing account to create and share your feelings, thoughts, and much more. We take care of your privacy thus providing you with your own unique account. Take a step forward, it's your time to shine. <mark style="color: #03A386;">MyBlog.com welcomes you.</mark></div>
+<div class="notification"> Recent Blogs</div>
+<ul class="rcntblg">
+	<li ng-repeat="blog in vm.blogs">User: <a href="#">{{blog.Username}} posted recently!</a></li>
+</ul>
+<div class="mainfooter">&copy Aditya Rathi</div>
